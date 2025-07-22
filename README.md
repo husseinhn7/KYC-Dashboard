@@ -25,8 +25,13 @@ docker-compose up --build
 ```
 
 - The backend will be available at http://localhost:5000
-- The frontend will be available at http://localhost:5173
+- The frontend will be available at http://localhost:4173/
 - MongoDB will run on port 27017
+
+## Useful Links
+
+- **Swagger API Docs:** [http://localhost:5000/api/docs/#/](http://localhost:5000/api/docs/#/)
+- **Frontend App:** [http://localhost:4173/](http://localhost:4173/)
 
 ### 3. Stopping the services
 
