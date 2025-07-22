@@ -5,5 +5,5 @@ COPY package.json bun.lockb* ./
 RUN npm install || bun install
 COPY . .
 RUN npm run build
-EXPOSE 5173
+EXPOSE 5173 4173
 CMD ["npm", "run", "preview", "--", "--host"]

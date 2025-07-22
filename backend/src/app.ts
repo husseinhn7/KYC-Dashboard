@@ -21,9 +21,11 @@ const app = express();
 
 // Security
 app.use(helmet());
-app.use(cors({
-  origin: ['http://localhost:8080', "http://192.168.56.1:8080/"],
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:4173", "*"],
+  })
+);
 app.use(express.json());
 
 // Rate limiting for auth routes
