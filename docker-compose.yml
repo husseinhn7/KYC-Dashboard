@@ -1,0 +1,32 @@
+# Docker Compose file to build and run both frontend and backend
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    # volumes removed to avoid overwriting build in container
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - mongo
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    # volumes removed to avoid overwriting build in container
+    environment:
+      - NODE_ENV=production
+  mongo:
+    image: mongo:7
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
